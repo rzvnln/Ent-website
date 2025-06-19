@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 355.95 211.17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #012169;
+      }
+
+      .cls-2 {
+        fill: #c8102e;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        stroke: #666;
+        stroke-miterlimit: 10;
+        stroke-width: 3.22px;
+      }
+    </style>
+  </defs>
+  <g id="Livello_3" data-name="Livello 3">
+    <rect class="cls-3" x="1.61" y="1.61" width="352.73" height="207.95" rx="1.86" ry="1.86"/>
+    <rect class="cls-2" x="155.88" y=".73" width="42.78" height="207.16"/>
+    <rect class="cls-2" x="156.48" y="-70.67" width="41.36" height="351.09" transform="translate(282.03 -72.28) rotate(90)"/>
+    <polygon class="cls-2" points="3.01 3.21 3.01 18.73 91.44 70.77 119.19 70.77 3.01 3.21"/>
+    <polygon class="cls-2" points="213.14 70.74 236.76 70.74 351.56 3.14 324.08 3.05 213.34 68.49 213.14 70.74"/>
+    <polygon class="cls-2" points="236.91 140 263.91 140 353.06 192.11 353.13 207.7 236.91 140"/>
+    <polygon class="cls-2" points="3.99 207.99 118.7 140.49 142.51 140.49 142.51 143.04 31.77 207.99 3.99 207.99"/>
+    <polygon class="cls-1" points="143 3.21 143 59.98 46.15 3.21 143 3.21"/>
+    <polygon class="cls-1" points="213.14 3.21 309.89 3.05 213.14 59.98 213.14 3.21"/>
+    <polygon class="cls-1" points="352.72 26.87 352.66 70.77 278.98 70.74 352.72 26.87"/>
+    <polygon class="cls-1" points="278.98 140 353.13 140 353.13 184.42 278.98 140"/>
+    <polygon class="cls-1" points="213.14 149.59 309.89 208.09 213.14 208.09 213.14 149.59"/>
+    <polygon class="cls-1" points="143 151.16 143 208.02 46.15 208.77 143 151.16"/>
+    <polygon class="cls-1" points="78.24 140 3.19 184.42 3.19 140 78.24 140"/>
+    <polygon class="cls-1" points="75.24 70.74 3.01 27.11 3.01 70.77 75.24 70.74"/>
+  </g>
+</svg>

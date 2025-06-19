@@ -1,0 +1,343 @@
+/* -----------------------------
+   RESET & BASE
+----------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  background: white;
+  color: #111;
+  overflow: hidden;
+}
+
+/* -----------------------------
+   LAYOUT & CONTAINER
+----------------------------- */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+/* -----------------------------
+   LOGO & ANIMAZIONE INIZIALE
+----------------------------- */
+.logo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.logo-wrapper svg {
+  width: 220px;
+  height: auto;
+}
+
+.triangle-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translate(-40px, -20px);
+  z-index: 10;
+}
+
+.triangle-wrapper svg {
+  width: 5500px;
+  height: auto;
+  opacity: 1;
+  transform: scale(1);
+  animation: shrinkFade 5s ease-in-out forwards;
+}
+
+@keyframes shrinkFade {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.055);
+    opacity: 0;
+  }
+}
+
+.cta-wrapper {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 20;
+}
+
+#entraBtn {
+  width: 130px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#entraBtn:hover {
+  transform: scale(1.05);
+}
+
+.ripple-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 100;
+  transition: all 1s ease;
+}
+
+/* -----------------------------
+   SIDEBAR
+----------------------------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin: 20px 0;
+  object-fit: contain;
+}
+
+#logoFull {
+  width: 185px;
+  height: auto;
+  object-fit: contain;
+  transition: opacity 0.6s ease 0s;
+  margin-bottom: 30px;
+  margin-top: -100px;
+}
+
+.nav a {
+  display: block;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  opacity: 1;
+  transition: opacity 0.6s ease 0.3s;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+}
+
+/* -----------------------------
+   MAIN CONTENT
+----------------------------- */
+.content {
+  margin-left: 220px;
+  padding: 60px 40px;
+  min-height: 100vh;
+}
+
+.contact-section {
+  margin-left: 0;
+  padding: 40px;
+}
+
+/* -----------------------------
+   FORM CONTATTI
+----------------------------- */
+.layout-columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-column.left,
+.form-column.middle,
+.form-column.right {
+  width: 400px;
+  margin-top: 70px;
+}
+
+
+#contactTitle {
+  font-weight: 800;
+  font-size: 43px;
+  margin-left: 100px;
+  margin-top: 2px;
+}
+
+.form-column.left{
+
+   font-size: 20px;
+  font-weight: 800;
+}
+
+
+
+.form-column.middle{ 
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.form-column.right {
+  font-size: 15px;
+  font-weight: 800;
+  background-color: #fdfdfd;
+  color: #333;
+   animation: softFadeLoop 3s ease-in-out infinite;
+}
+
+
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #333;
+}
+
+.required-label::after {
+  content: " *";
+  color: red;
+  font-weight: bold;
+}
+
+/* -----------------------------
+   FOOTER
+----------------------------- */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 820px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #333;
+}
+
+/* -----------------------------
+   LINGUA & FLAG
+----------------------------- */
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang img {
+  width: 18px;
+  height: auto;
+  cursor: pointer;
+}
+
+.lang-switch {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 28px;
+  height: 20px;
+  z-index: 99;
+}
+
+.lang-switch img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s ease;
+  cursor: pointer;
+}
+
+/* -----------------------------
+   TRANSIZIONI VISUALI
+----------------------------- */
+.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.fade.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+#logoToggle.fade {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+#logoToggle.fade.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* -----------------------------
+   ANIMAZIONI CUSTOM
+----------------------------- */
+@keyframes softFadeLoop {
+  0%, 100% {
+    opacity: 0.90;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+

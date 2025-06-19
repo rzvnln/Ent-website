@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti - E.ENT</title>
+
+  <!-- QUI aggiungi il font Noto Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="sidebar">
+    <img src="assets/EntE.svg" class="logo" id="logoToggle" onclick="toggleLogo()">
+    <img src="assets/EntSVG.svg" class="logo fade" id="logoFull" onclick="toggleLogo()">
+
+    <nav class="nav fade hidden" id="mainNav">
+      <a href="#servizi" data-it="Servizi" data-en="Services">Servizi</a>
+      <a href="#contatti" data-it="Contatti" data-en="Contacts">Contatti</a>
+      <a href="#portfolio" data-it="Portfolio" data-en="Portfolio">Portfolio</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section id="contatti" class+="contact-section">
+     <h2 id="contactTitle" data-it="Contattaci" data-en="Contact Us">Contattaci</h2>
+
+      <form id="contactForm" class="contact-form layout-columns">
+        <!-- Colonna 1 -->
+       <div class="form-column left">
+  <label for="nome" class="required-label" data-it="Nome" data-en="First Name">Nome</label>
+  <input type="text" id="nome" name="nome" required>
+
+  <label for="cognome" class="required-label" data-it="Cognome" data-en="Last Name">Cognome</label>
+  <input type="text" id="cognome" name="cognome" required>
+
+  <label for="email" class="required-label" data-it="Email" data-en="Email">Email</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="telefono" data-it="Telefono" data-en="Phone">Telefono</label>
+  <input type="tel" id="telefono" name="telefono">
+
+  <label for="azienda" data-it="Azienda" data-en="Company">Azienda</label>
+  <input type="text" id="azienda" name="azienda">
+</div>
+
+
+        <!-- Colonna 2 -->
+        <div class="form-column middle">
+          <label for="oggetto" class="required-label" data-it="Oggetto" data-en="Subject">Oggetto</label>
+          <input type="text" id="oggetto" name="oggetto" required>
+
+          <label for="messaggio" class="required-label" data-it="Messaggio" data-en="Message">Messaggio</label>
+          <textarea id="messaggio" name="messaggio" rows="10" required></textarea>
+
+          <button type="submit" id="submitBtn" data-it="Invia" data-en="Submit">Invia</button>
+
+        </div>
+
+        <!-- Colonna 3 -->
+    <div class="form-column right">
+  <p><h1>
+    <strong data-it="📝 Come scrivere il tuo messaggio" data-en="📝 How to write your message">
+      📝 Come scrivere il tuo messaggio
+    </strong></h1>
+  </p>
+  <h2> 
+  <p data-it="Per aiutarti al meglio, nel messaggio puoi indicare:" 
+     data-en="To help you better, in the message you can include:">
+     Per aiutarti al meglio, nel messaggio puoi indicare:
+  </p>
+  </h2>
+  <ul>
+    <li data-it="✅ Che tipo di servizio ti interessa (grafica, social, video, altro)" 
+        data-en="✅ What kind of service you need (graphic, social, video, other)">
+      ✅ Che tipo di servizio ti interessa (grafica, social, video, altro)
+    </li>
+    <li data-it="📍 Obiettivo del progetto (es. promuovere un evento, creare un brand, aumentare follower…)" 
+        data-en="📍 Project goal (e.g., promote an event, build a brand, increase followers…)">
+      📍 Obiettivo del progetto (es. promuovere un evento, creare un brand, aumentare follower…)
+    </li>
+    <li data-it="⏳ Tempistiche ideali" 
+        data-en="⏳ Ideal timing">
+      ⏳ Tempistiche ideali
+    </li>
+    <li data-it="💬 I tuoi canali attivi (Instagram, sito, YouTube…)" 
+        data-en="💬 Your active channels (Instagram, website, YouTube…)">
+      💬 I tuoi canali attivi (Instagram, sito, YouTube…)
+    </li>
+  </ul>
+  <h5>
+  <p>
+    <strong data-it="Esempio:" data-en="Example:">Esempio:</strong><br>
+    <span data-it='“Ciao! Vorrei un logo moderno per il mio brand di skincare. Vorrei qualcosa di elegante, con tonalità naturali. Mi piacerebbe riceverlo entro fine mese. Il mio profilo è @bellaskin_”'
+          data-en='“Hi! I’d like a modern logo for my skincare brand. Something elegant with natural tones. I’d love to get it by the end of the month. My profile is @bellaskin_.”'>
+      “Ciao! Vorrei un logo moderno per il mio brand di skincare. Vorrei qualcosa di elegante, con tonalità naturali. Mi piacerebbe riceverlo entro fine mese. Il mio profilo è @bellaskin_”
+    </span>
+  </p>
+  </h5>
+</div>
+
+
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 E.ENT. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <div class="lang-switch">
+    <img id="langIcon" src="assets/IT.svg" alt="IT" onclick="toggleLanguage()" />
+  </div>
+</body>
+</html>

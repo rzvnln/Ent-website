@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>.ENT Main Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="sidebar">
+    <!-- Logo minimale visibile all'inizio -->
+    <img src="assets/EntE.svg" class="logo" id="logoToggle" onclick="toggleLogo()">
+
+    <!-- Logo grande nascosto all'inizio -->
+    <img src="assets/EntSVG.svg" class="logo fade" id="logoFull" onclick="toggleLogo()">
+
+    <!-- Menu nascosto all'inizio -->
+    <nav class="nav fade hidden" id="mainNav">
+      <a href="#servizi.html" data-it="Servizi" data-en="Services">Servizi</a>
+      <a href="#contatti.html" data-it="Contatti" data-en="Contacts">Contatti</a>
+      <a href="#portfolio.html" data-it="Portfolio" data-en="Portfolio">Portfolio</a>
+    </nav>
+  </header>
+
+  <footer class="footer">
+    <p>&copy; 2025 E-ENT. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Switch lingua aggiornato -->
+  <div class="lang-switch">
+    <img id="langIcon" src="assets/IT.svg" alt="IT" onclick="toggleLanguage()" />
+  </div>
+</body>
+</html>
