@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350.62 350.62">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 6px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-width: 6.32px;
+      }
+
+      .cls-3 {
+        stroke-width: 7px;
+      }
+    </style>
+  </defs>
+  <g id="grafica_visualdesign" data-name="grafica&amp;amp;visualdesign">
+    <path d="M287.65,7c30.86,0,55.97,25.11,55.97,55.97v224.68c0,30.86-25.11,55.97-55.97,55.97H62.97c-30.86,0-55.97-25.11-55.97-55.97V62.97C7,32.11,32.11,7,62.97,7h224.68M287.65,0H62.97C28.19,0,0,28.19,0,62.97v224.68c0,34.78,28.19,62.97,62.97,62.97h224.68c34.78,0,62.97-28.19,62.97-62.97V62.97c0-34.78-28.19-62.97-62.97-62.97h0Z"/>
+    <path d="M171.44,83.11v174.61H39.09V83.11h132.35M178.44,76.11H32.09v188.61h146.35V76.11h0Z"/>
+    <line class="cls-3" x1="114.36" y1="125.69" x2="157.36" y2="125.69"/>
+    <line class="cls-3" x1="114.36" y1="139.64" x2="156.84" y2="139.64"/>
+    <line class="cls-3" x1="52.96" y1="159.99" x2="100.41" y2="159.99"/>
+    <line class="cls-3" x1="52.96" y1="180.84" x2="100.41" y2="180.84"/>
+    <line class="cls-3" x1="52.96" y1="212.28" x2="156.27" y2="212.28"/>
+    <line class="cls-3" x1="52.96" y1="232.63" x2="156.27" y2="232.63"/>
+    <line class="cls-3" x1="114.36" y1="112.12" x2="157.66" y2="112.12"/>
+    <line class="cls-3" x1="112.96" y1="96.98" x2="158.54" y2="96.98"/>
+    <rect class="cls-2" x="201.98" y="34.23" width="106.43" height="146.02"/>
+    <rect x="212.16" y="42.94" width="86.09" height="47.19"/>
+    <rect x="212.16" y="103.87" width="40.99" height="33.4"/>
+    <rect x="52.96" y="90.47" width="57.62" height="57.62"/>
+    <rect x="104.61" y="156.6" width="53.92" height="36"/>
+    <rect class="cls-1" x="190.71" y="200.6" width="134.64" height="81.64"/>
+    <rect x="197.4" y="205.54" width="120.52" height="68.22"/>
+  </g>
+</svg>

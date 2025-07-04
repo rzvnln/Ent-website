@@ -9,6 +9,12 @@
 <body>
   <div class="background"></div>
 
+<!-- Animazione griglia boh
+  
+<div class="webgl-container">
+  <canvas id="webgl-canvas"></canvas>
+</div> -->
+
   <header class="sidebar">
     <!-- Logo minimale visibile all'inizio -->
     <img src="assets/EntE.svg" class="logo" id="logoToggle" onclick="toggleLogo()">
@@ -18,9 +24,9 @@
 
     <!-- Menu nascosto all'inizio -->
     <nav class="nav fade hidden" id="mainNav">
-      <a href="#servizi.html" data-it="Servizi" data-en="Services">Servizi</a>
-      <a href="#contatti.html" data-it="Contatti" data-en="Contacts">Contatti</a>
-      <a href="#portfolio.html" data-it="Portfolio" data-en="Portfolio">Portfolio</a>
+      <a href="servizi.html" data-it="Servizi" data-en="Services">Servizi</a>
+      <a href="contatti.html" data-it="Contatti" data-en="Contacts">Contatti</a>
+
     </nav>
   </header>
 
@@ -28,11 +34,110 @@
     <p>&copy; 2025 E-ENT. Tutti i diritti riservati.</p>
   </footer>
 
+  <!--- Script WebGL 
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js"></script>
+<script>
+  let scene, camera, renderer, mesh, uniforms;
+
+  init();
+  animate();
+
+  function init() {
+    const container = document.querySelector(".webgl-container");
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    camera.position.z = 2;
+
+    const geometry = new THREE.PlaneBufferGeometry(2, 2, 100, 100);
+
+    uniforms = {
+      u_time: { value: 0.0 }
+    };
+
+    const material = new THREE.ShaderMaterial({
+      uniforms: uniforms,
+      vertexShader: `
+        uniform float u_time;
+        varying vec2 vUv;
+        void main() {
+          vUv = uv;
+          vec3 pos = position;
+          pos.z = sin(pos.x * 10.0 + u_time) * 0.1;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+      `,
+      fragmentShader: `
+        varying vec2 vUv;
+        void main() {
+          float gray = 0.5 + 0.5 * sin(10.0 * (vUv.x + vUv.y));
+          gl_FragColor = vec4(vec3(gray), 1.0);
+        }
+      `,
+      wireframe: true
+    });
+
+    mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("webgl-canvas"), alpha: true });
+    renderer.setSize(800, 800);
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    uniforms.u_time.value += 0.01;
+    renderer.render(scene, camera);
+  }
+</script>
+-->
+
   <script src="script.js"></script>
 
   <!-- Switch lingua aggiornato -->
   <div class="lang-switch">
     <img id="langIcon" src="assets/IT.svg" alt="IT" onclick="toggleLanguage()" />
   </div>
+
+<!-- Bottone per aprire il popup -->
+<div id="privacyBtn"
+     style="position:fixed; bottom:10px; left:180px; background:white; padding:8px 16px; border-radius:8px; cursor:pointer; z-index:999; font-family: 'Noto Sans', sans-serif; font-weight: bold;"
+     data-it="Privacy"
+     data-en="Privacy">
+  Privacy
+</div>
+
+<!-- Il popup nascosto inizialmente -->
+<div id="privacyPopup"
+     style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; font-family: 'Noto Sans', sans-serif;">
+  <div style="background:white; padding:30px; border-radius:12px; max-width:500px; text-align:center;">
+    <p id="privacyText" 
+       data-it="Questo sito non utilizza cookie di profilazione né raccoglie dati personali. Vengono utilizzati solo cookie tecnici e funzionali al funzionamento del sito."
+       data-en="This website does not use profiling cookies nor collect personal data. Only technical cookies necessary for functionality are used.">
+       Questo sito non utilizza cookie di profilazione né raccoglie dati personali. Vengono utilizzati solo cookie tecnici e funzionali al funzionamento del sito.
+    </p>
+    
+    <br />
+    <button id="privacyCloseBtn"
+            data-it="Chiudi"
+            data-en="Close"
+            onclick="document.getElementById('privacyPopup').style.display='none'" 
+            style="font-family: 'Noto Sans', sans-serif; font-weight: bold;">
+      Chiudi
+    </button>
+  </div>
+</div>
+
+
+<script>
+document.getElementById("privacyBtn").onclick = function () {
+  document.getElementById("privacyPopup").style.display = "flex";
+};
+</script>
+
+
+
+
 </body>
 </html>

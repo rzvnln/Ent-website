@@ -16,73 +16,114 @@ function startTransition() {
   ripple.style.width = "3000px";
   ripple.style.height = "3000px";
   ripple.style.opacity = "1";
-  
-  // opzionale: sfuma anche il bottone
+
   document.getElementById("cta").style.opacity = "1";
 
-  // aspetta 1.2s e poi cambia pagina (o scrolla)
   setTimeout(() => {
-    window.location.href = "main.html"; // cambia con la tua pagina
+    window.location.href = "main.html";
   }, 1200);
 }
 
 let menuVisible = false;
 
 function toggleLogo() {
- const logoMin = document.getElementById("logoToggle");
-const logoFull = document.getElementById("logoFull");
-const nav = document.getElementById("mainNav");
+  const logoMin = document.getElementById("logoToggle");
+  const logoFull = document.getElementById("logoFull");
+  const nav = document.getElementById("mainNav");
 
-if (!menuVisible) {
-  logoMin.classList.add("fade");
-  logoFull.classList.add("show");
-  nav.classList.add("show");
-} else {
-  logoMin.classList.remove("fade");
-  logoFull.classList.remove("show");
-  nav.classList.remove("show");
+  if (!menuVisible) {
+    logoMin.classList.add("fade");
+    logoFull.classList.add("show");
+    nav.classList.add("show");
+  } else {
+    logoMin.classList.remove("fade");
+    logoFull.classList.remove("show");
+    nav.classList.remove("show");
+  }
+  menuVisible = !menuVisible;
 }
-menuVisible = !menuVisible;
 
-}
-
-let currentLang = "IT";
+let currentLang = "it";
 
 function toggleLanguage() {
-  const elements = document.querySelectorAll("[data-it][data-en]");
-  const langIcon = document.getElementById("langIcon");
+  const elements = document.querySelectorAll('[data-it]');
+  currentLang = (currentLang === "it") ? "en" : "it";
 
-  // Cambia testi in base alla lingua attuale
   elements.forEach(el => {
-    el.textContent = currentLang === "IT"
-      ? el.getAttribute("data-en")
-      : el.getAttribute("data-it");
+    if (el.tagName === "H3") {
+      const icon = el.querySelector('img');
+      const langText = (currentLang === "it") ? el.dataset.it : el.dataset.en;
+      el.innerHTML = '';
+      if (icon) el.appendChild(icon);
+      el.append(" " + langText);
+    } else {
+      el.textContent = (currentLang === "it") ? el.dataset.it : el.dataset.en;
+    }
   });
 
-  // Cambia bandiera
-  if (currentLang === "IT") {
-    langIcon.src = "assets/ENG.svg";
-    langIcon.alt = "EN";
-    currentLang = "EN";
-  } else {
-    langIcon.src = "assets/IT.svg";
-    langIcon.alt = "IT";
-    currentLang = "IT";
+  // ✅ Cambio bandiera
+  const langIcon = document.getElementById('langIcon');
+  langIcon.src = (currentLang === "it") ? "assets/IT.svg" : "assets/ENG.svg";
+
+  // ✅ Popup privacy - pulsante + testo
+  const privacyText = document.getElementById("privacyText");
+  const closeBtn = document.getElementById("closePrivacyPopup");
+  if (privacyText && closeBtn) {
+    privacyText.textContent = (currentLang === "it") ? privacyText.dataset.it : privacyText.dataset.en;
+    closeBtn.textContent = (currentLang === "it") ? closeBtn.dataset.it : closeBtn.dataset.en;
+  }
+
+  // ✅ Pulsante privacy visibile
+  const privacyBtn = document.getElementById("privacyBtn");
+  if (privacyBtn) {
+    privacyBtn.textContent = (currentLang === "it") ? privacyBtn.dataset.it : privacyBtn.dataset.en;
   }
 }
 
 
+gsap.registerPlugin(ScrollTrigger);
 
+gsap.utils.toArray(".service-block").forEach((section) => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 80,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%",
+      toggleActions: "play none none none"
+    }
+  });
+});
 
+gsap.utils.toArray(".image-overlay").forEach((image) => {
+  gsap.to(image, {
+    yPercent: 15,
+    ease: "none",
+    scrollTrigger: {
+      trigger: image,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1
+    }
+  });
+});
 
+ScrollTrigger.config({
+  ignoreMobileResize: true
+});
 
+function startContattaciTransition(event) {
+  event.preventDefault();
+  const ripple = document.getElementById("rippleContattaci");
+  ripple.style.width = "3000px";
+  ripple.style.height = "3000px";
+  ripple.style.opacity = "1";
 
-
-
-
-
-
-
-
+  setTimeout(() => {
+    window.location.href = "contatti.html";
+  }, 1200);
+}
 
 

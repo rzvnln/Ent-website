@@ -13,7 +13,8 @@ body, html {
   font-family: 'Noto Sans', sans-serif;
   background: white;
   color: #111;
-  overflow: hidden;
+   overflow-x: hidden;
+
 }
 
 /* -----------------------------
@@ -271,6 +272,9 @@ section {
   color: #333;
 }
 
+
+
+
 /* -----------------------------
    LINGUA & FLAG
 ----------------------------- */
@@ -340,4 +344,438 @@ section {
     opacity: 1;
   }
 }
+
+.service-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+   position: relative;
+}
+
+.service-icon {
+  width: 28px;
+  height: auto;
+  filter: invert(0);
+}
+
+/* -----------------------------
+   SERVIZI - Icone & Animazioni
+----------------------------- */
+.service-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.2s);
+  position: relative;
+}
+
+.service-block:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+/* -------- TESTO SERVIZI --------*/
+
+.service-block h3 {
+  font-size: 50px;
+  margin-bottom: 28px;
+}
+
+.service-block p {
+  max-width: 550px;
+  line-height: 1.8;
+  font-size: 20px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* -----------------------------
+   ANIMAZIONI
+----------------------------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowLoop {
+  0%, 100% {
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+  }
+}
+
+.service-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 80px;  /* aumenta o riduci a piacere */
+  height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+
+.service-icon-wrapper svg,
+.service-icon-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: shineMove 4s infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(25deg);
+  }
+}
+
+.titolo-servizi {
+   position: relative;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  /* modifiche */
+  letter-spacing: 8px;
+  margin-left: 400px;
+  margin-top: 50px;
+  font-size: 220px;
+}
+
+.grid-servizi {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+  padding: 60px;
+  margin-left: 220px;
+}
+
+/* Ogni blocco posizionato liberamente */
+.logo-visual {
+  grid-column: 1 / span 5;
+  grid-row: 1;
+}
+
+.grafica-visual {
+  grid-column: 1 / span 5;
+  grid-row: 2;
+}
+
+.sito-web {
+  grid-column: 8 / span 5;
+  grid-row: 1;
+}
+
+.social-media {
+  grid-column: 8 / span 5;
+  grid-row: 2;
+}
+
+.foto-video {
+  grid-column: 5 / span 5;
+  grid-row: 3;
+}
+
+/* -----------------------------
+   SERVIZI - IMMAGINI OVERLAY
+----------------------------- */
+.image-overlay {
+ width: 900px;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.image-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.service-block:not(:nth-child(even)) .image-overlay {
+  margin-right: -50px;
+}
+.service-block:nth-child(even) .image-overlay {
+  margin-left: -66px; /* oppure -240px se vuoi più preciso */
+}
+
+.contact-button {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+.contact-button a {
+  background-color: black;
+  color: white;
+  padding: 18px 42px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 50px;
+  transition: background 0.3s;
+}
+
+.contact-button a:hover {
+  background-color: #333;
+}
+
+/* Footer normale per pagina servizi */
+body.page-servizi {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-servizi .content-wrapper {
+  flex: 1;
+}
+
+.page-servizi .footer {
+  position: relative;
+  margin-left: -680px;
+  padding: 20px;
+  text-align: center;
+  width: calc(100% - 220px);
+  display: flex;
+  justify-content: center;
+}
+
+.service-icon-inline {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.image-overlay img {
+  will-change: transform;
+}
+
+/* WEB GL GRIGLIA 
+.webgl-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vw;
+  max-width: 100%;
+  max-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+
+#webgl-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+*/
+.privacy-btn {
+  position: fixed;
+  bottom: 10px;
+  left: 180px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #111;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 14px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  z-index: 98;
+  transition: background 0.3s ease;
+}
+
+.privacy-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.privacy-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none; /* <-- sarà messo a flex da JS */
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.privacy-popup .popup-content {
+  background: white;
+  color: #111;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.privacy-popup button {
+  margin-top: 20px;
+  padding: 8px 16px;
+  border: none;
+  background: #111;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 80px;
+    margin: 0;
+  }
+
+  #logoFull {
+    width: 140px;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+  }
+
+  .nav a {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .content,
+  .grid-servizi {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .titolo-servizi {
+    font-size: 60px;
+    margin: 20px 0;
+    margin-left: 0;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+
+
+.service-block {
+  flex-direction: column !important;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* evita scroll orizzontale */
+  padding: 0 10px;
+}
+
+.service-block h3 {
+  font-size: 28px;
+  flex-direction: column;
+  gap: 6px;
+  word-break: break-word;
+}
+
+.service-icon-inline {
+  width: 120px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.service-block p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
+
+
+  .image-overlay {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-overlay img {
+    height: auto;
+  }
+
+  .contact-button a {
+    font-size: 28px;
+    padding: 14px 24px;
+  }
+
+  .form-column {
+    width: 100%;
+  }
+
+  .layout-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-column.right h1, .form-column.right h2, .form-column.right h5 {
+    font-size: 16px;
+  }
+
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .footer {
+    margin-top: auto;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+
 
