@@ -660,12 +660,24 @@ body.page-servizi {
 
 
 @media (max-width: 768px) {
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
     position: static;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
   }
 
@@ -681,7 +693,9 @@ body.page-servizi {
 
   .nav {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
     margin: 0;
   }
 
@@ -694,6 +708,7 @@ body.page-servizi {
   .grid-servizi {
     margin-left: 0;
     padding: 20px;
+    box-sizing: border-box;
   }
 
   .titolo-servizi {
@@ -704,37 +719,31 @@ body.page-servizi {
     text-align: center;
   }
 
+  .service-block {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 0 10px;
+  }
 
+  .service-block h3 {
+    font-size: 28px;
+    flex-direction: column;
+    gap: 6px;
+    word-break: break-word;
+  }
 
-.service-block {
-  flex-direction: column !important;
-  align-items: center;
-  text-align: center;
-  overflow: hidden; /* evita scroll orizzontale */
-  padding: 0 10px;
-}
+  .service-icon-inline {
+    width: 120px;
+    height: auto;
+    margin-bottom: 12px;
+  }
 
-.service-block h3 {
-  font-size: 28px;
-  flex-direction: column;
-  gap: 6px;
-  word-break: break-word;
-}
-
-.service-icon-inline {
-  width: 120px;
-  height: auto;
-  margin-bottom: 12px;
-}
-
-.service-block p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-
-
-
+  .service-block p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 
   .image-overlay {
     width: 100%;
@@ -750,23 +759,22 @@ body.page-servizi {
     padding: 14px 24px;
   }
 
-  .form-column {
-    width: 100%;
-  }
+ .form-column {
+  width: 100%;
+  padding: 0 10px; /* Aggiungi questo se non c'è */
+  box-sizing: border-box;
+}
+
 
   .layout-columns {
     flex-direction: column;
     gap: 20px;
   }
 
-  .form-column.right h1, .form-column.right h2, .form-column.right h5 {
+  .form-column.right h1,
+  .form-column.right h2,
+  .form-column.right h5 {
     font-size: 16px;
-  }
-
-    body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
 
   .footer {
@@ -774,8 +782,96 @@ body.page-servizi {
     position: relative;
     text-align: center;
     padding: 20px;
+    font-size: 13px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  #privacyBtn {
+    position: static !important;
+    padding: 8px 16px;
+    background: white;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  #privacyPopup > div {
+    width: 90%;
+    max-width: 90%;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #langIcon {
+    width: 32px;
+  }
+
+  .lang-switch {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+  }
+
+  .contact-section {
+    padding-bottom: 100px;
+  }
+  input, textarea, button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+ .form-column.left,
+  .form-column.middle,
+  .form-column.right {
+    width: 100% !important;
+    padding-left: 12px;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+
+  .contact-form {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  .lang-switch {
+    left: auto;
+    right: 12px;
+    bottom: 16px;
+  }
+#contactTitle {
+    font-size: 36px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    width: 100%;
+  }
+ .page-main .lang-switch {
+    bottom: 70px;
   }
 }
+
+.page-main .lang-switch {
+  bottom: 40px; /* alzala quanto vuoi */
+}
+
+
+
+
+
 
 
 
